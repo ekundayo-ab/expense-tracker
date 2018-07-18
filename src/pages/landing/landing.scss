@@ -1,0 +1,78 @@
+page-landing {
+
+  ion-content {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(#d580a0, #ab4967);
+    height: 100vh;
+
+    h2 {
+      color: white;
+      text-align: center;
+    }
+
+    ion-slides {
+      padding: 0;
+      height: auto;
+
+      .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+      }
+
+      ion-slide {
+        background: transparent;
+
+        p {
+          font-family: 'bree serif';
+          font-size: 50px;
+          padding: 0 30px;
+          padding-top: 0px;
+          padding-bottom: 10px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 80px;
+    box-shadow: 0 2px 25px 0 #525151;
+
+    span {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-style: italic;
+      font-size: 30px;
+      color: #ab4967;
+    }
+  }
+
+  ion-footer {
+    display: flex;
+
+    &.footer-md:before {
+      background: none;
+    }
+
+    .button-md, .button-ios, .button-wp {
+      margin: 0;
+      height: 50px;
+    }
+
+    button {
+      width: 50%;
+      border-radius: 0 !important;
+      background-color: #a04668 !important;
+      margin: 0;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+  }
+}
