@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/expense-tracker
+    docker:
+      - image: circleci/node:8.11.3-jessie-browsers
+    environment:
+      - COVERALLS_REPO_TOKEN = $COVERALLS_REPO_TOKEN
+      - CC_TEST_REPORTER_ID = $CC_TEST_REPORTER_ID
+    steps:
+      - checkout
+      - run:
+          name: Cleaning npm cache
+          command: npm cache clean --force
+      - run:
+          name : Install cordova
+          command : sudo npm i -g cordova
+      - run:
+          name : Install ionic
+          command : sudo npm i -g ionic
+      - run:
+          name: Install node modules
+          command: npm install && sudo npm install -g coveralls codeclimate-test-reporter
+      - run:
+          name: Run unit tests
+          command: npm run test-ci
+      - store_artifacts:
+          path: coverage
+      - run:
+          name: Upload test results to coveralls
+          command: coveralls < ./coverage/lcov.info
+      - run:
+          name: Upload test results to codeclimate
+          command: codeclimate-test-reporter < coverage/lcov.info
