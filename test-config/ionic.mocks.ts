@@ -126,3 +126,7 @@ export class NavParamsMock {
     NavParamsMock.returnParam = value;
   }
 }
+
+export class NavControllerMock {
+  push = jasmine.createSpy("push");
+}
