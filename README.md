@@ -2,3 +2,4 @@
 
 # Expense Tracker
 ## All your expenses in one place
+![Expense Tracker Landing](src/assets/imgs/expense-tracker.png?raw=true "Landing Screen on devices' lab simulator")
