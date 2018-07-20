@@ -11,7 +11,9 @@ module.exports = {
   module: {
     rules: [{
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        loaders: [{
+          loader: 'ts-loader'
+        }, 'angular2-template-loader']
       },
       {
         test: /.+\.ts$/,

@@ -36,7 +36,7 @@ module.exports = function(config) {
 
     webpackServer: {
       noInfo: true
-    },
+    },  
 
     browserConsoleLogOptions: {
       level: 'log',
@@ -49,7 +49,7 @@ module.exports = function(config) {
       fixWebpackSourcePaths: true
     },
 
-    reporters: config.coverage ? ['kjhtml', 'dots', 'coverage-istanbul'] : ['kjhtml', 'dots'],
+    reporters: ['spec', 'coverage-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
