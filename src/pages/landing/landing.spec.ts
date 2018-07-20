@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { IonicModule, Platform, NavController} from 'ionic-angular/index';
+import { IonicModule, NavController} from 'ionic-angular/index';
+import { By } from '@angular/platform-browser';
 import { LandingPage } from './landing';
 import { NavParams } from 'ionic-angular';
-import { NavParamsMock } from '../../../test-config/mocks-ionic';
+import { NavParamsMock, NavControllerMock } from '../../../test-config/ionic.mocks';
 
 describe('Landing Page', () => {
   let h2: HTMLElement;
@@ -18,8 +17,8 @@ describe('Landing Page', () => {
         IonicModule.forRoot(LandingPage)
       ],
       providers: [
-        NavController,
-        { provide: NavParams, useClass: NavParamsMock}
+        { provide: NavParams, useClass: NavParamsMock},
+        { provide: NavController, useClass: NavControllerMock}
       ]
     });
   }));
@@ -34,5 +33,12 @@ describe('Landing Page', () => {
 
   it('should render Expense Tracker as an h2 heading', () => {
     expect(h2.textContent).toContain('Expense Tracker')
+  });
+
+  it('should call goToPage method', () => {
+    let navCtrl = fixture.debugElement.injector.get(NavController)
+    component.goToPage('LandingPage');
+    expect(navCtrl.push).toHaveBeenCalled();
+    expect(navCtrl.push).toHaveBeenCalledWith('LandingPage');
   });
 });

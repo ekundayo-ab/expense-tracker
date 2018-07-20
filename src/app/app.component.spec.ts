@@ -9,7 +9,7 @@ import {
   PlatformMock,
   StatusBarMock,
   SplashScreenMock
-} from '../../test-config/mocks-ionic';
+} from '../../test-config/ionic.mocks';
 
 describe('MyApp Component', () => {
   let fixture;
