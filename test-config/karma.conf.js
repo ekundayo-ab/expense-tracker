@@ -1,7 +1,7 @@
 var webpackConfig = require('./webpack.test.js');
 
 module.exports = function(config) {
-  var _config = {
+  config.set({
     basePath: '../',
 
     frameworks: ['jasmine'],
@@ -36,7 +36,7 @@ module.exports = function(config) {
 
     webpackServer: {
       noInfo: true
-    },  
+    },
 
     browserConsoleLogOptions: {
       level: 'log',
@@ -56,7 +56,5 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false
-  };
-
-  config.set(_config);
+  });
 };
